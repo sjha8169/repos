@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="TwitterApiConsumer.View.SampledStreamView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TwitterApiConsumer.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="550" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Content="Twitter Data" HorizontalAlignment="Center" FontWeight="Black"/>
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="100"/>
+                
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"  Content="Total number of tweets received: "/>
+            <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=SampleStreamData.NoOfTweetsReceived}"/>
+
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Content="Average tweets per hour: "/>
+            <TextBlock Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=SampleStreamData.AverageTweetPerHour}"/>
+
+            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Content="Average tweets per minute: "/>
+            <TextBlock Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=SampleStreamData.AverageTweetPerMin}"/>
+
+            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Content="Average tweets per second: "/>
+            <TextBlock Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=SampleStreamData.AverageTweetPerSec}"/>
+
+            <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Content="Top Emojis in tweets: "/>
+            <ListBox Grid.Row="4" Grid.Column="1" HorizontalAlignment="Left" ItemsSource="{Binding Path=SampleStreamData.TopEmojis}" Width="200" />
+
+            <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Content="Percent of tweets that contains emojis: "/>
+            <TextBlock Grid.Row="5" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=SampleStreamData.PercentOfTweetsWithEmojis}"/>
+
+            <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right" Content="Top hashtags: "/>
+            <ListBox Grid.Row="6" Grid.Column="1" HorizontalAlignment="Left" ItemsSource="{Binding Path=SampleStreamData.TopHashTags}" Width="200"/>
+
+            <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right" Content="Percent of tweets that contain a url: "/>
+            <TextBlock Grid.Row="7" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=SampleStreamData.PercentofTweetsWithUrl}"/>
+
+            <Label Grid.Row="8" Grid.Column="0" HorizontalAlignment="Right" Content="Percent of tweets that contain a photo url: "/>
+            <TextBlock Grid.Row="8" Grid.Column="1" HorizontalAlignment="Left" Text="{Binding Path=SampleStreamData.PercentofTweetsWithPhotoUrl}"/>
+
+            <Label Grid.Row="9" Grid.Column="0" HorizontalAlignment="Right" Content="Top domains of urls in tweets: "/>
+            <ListBox Grid.Row="9" Grid.Column="1" HorizontalAlignment="Left" ItemsSource="{Binding Path=SampleStreamData.TopDomainsofUrls}" Width="200"/>           
+        </Grid>
+    </Grid>
+</UserControl>
